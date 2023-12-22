@@ -8,12 +8,14 @@ const app = express();
 
 app.use(
   pino({
-    level: 'debug',
+    transport: {
+      target: 'pino-dev',
+    },
   })
 );
+
 app.use(express.json());
 app.use(cookieParser());
-
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.use('/api/v1/auth', authRouter);
