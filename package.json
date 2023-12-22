@@ -2,7 +2,11 @@
   "name": "@unified-job/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build-backend": "nx run backend:build:production",
+    "build-frontend": "nx run frontend:build:production",
+    "start-backend": "node dist/apps/backend/main.js"
+  },
   "private": true,
   "dependencies": {
     "@mantine/carousel": "^7.3.2",

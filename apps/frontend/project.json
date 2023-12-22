@@ -25,12 +25,13 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "frontend:build",
-        "proxyConfig": "apps/frontend/proxy.conf.json"
+        "proxyConfig": "apps/frontend/proxy.dev.json"
       },
       "configurations": {
         "development": {
           "buildTarget": "frontend:build:development",
-          "hmr": true
+          "hmr": true,
+          "proxyConfig": "apps/frontend/proxy.dev.json"
         },
         "production": {
           "buildTarget": "frontend:build:production",

@@ -36,7 +36,7 @@ export const login = async (req: Request, res: Response) => {
     const payload: CookiePayload = {
       id: user.id,
     };
-    const token: string = jwt.sign(payload, process.env.JWT_SECRET);
+    const token: string = jwt.sign(payload, process.env.NX_JWT_SECRET);
     return res
       .cookie('accessToken', token, {
         httpOnly: true,

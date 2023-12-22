@@ -14,7 +14,7 @@ export const authorize = async (
     if (!token) return res.status(403).json({ message: 'Unauthorized' });
     const decoded = jwt.verify(
       token,
-      process.env.JWT_SECRET as string
+      process.env.NX_JWT_SECRET as string
     ) as CookiePayload;
     if (!decoded) return res.status(401).json({ message: 'Unauthorized' });
     const user = await User.findById(decoded.id);
