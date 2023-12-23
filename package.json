@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build-backend": "nx run backend:build:production",
+    "build-backend-prod": "nx run backend:build:production",
+    "build-backend-dev": "nx run backend:build:development",
     "build-frontend": "nx run frontend:build:production",
+    "build-frontend-dev": "nx run frontend:build:development",
+    "start-backend-local": "node --env-file .env.development dist/apps/backend/main.js",
     "start-backend": "node dist/apps/backend/main.js"
   },
   "private": true,
