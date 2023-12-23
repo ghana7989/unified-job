@@ -16,9 +16,13 @@ app.use(
 );
 
 app.use(express.json());
+
 app.use(cookieParser());
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
+app.get('/', (req, res) => {
+  res.send('Hello World! I am working fine, current api version : v1');
+});
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/user', userRouter);
 
