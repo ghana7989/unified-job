@@ -26,7 +26,7 @@ export const register = async (req: Request, res: Response) => {
 export const login = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).select('+password');
     if (!user) return res.status(401).json({ message: 'User not found' });
     // validate password
     const isMatch = await AuthService.isPasswordValid(password, user.password);
